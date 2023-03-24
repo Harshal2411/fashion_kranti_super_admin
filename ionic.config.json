@@ -1,0 +1,7 @@
+{
+  "name": "fashionKrantiAdmin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
