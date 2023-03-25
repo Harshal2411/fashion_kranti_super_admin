@@ -11,7 +11,7 @@ export class LoginPage implements OnInit {
   type = 'signin'
   options:any
   auth:any
-  
+  emailPattern = /^[A-Za-z0-9]+([._-]{0,1}[A-Za-z0-9])+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
     username: string = '';
     password: any;
     fullname: string = '';
@@ -140,6 +140,20 @@ export class LoginPage implements OnInit {
       }
     }else{
       return false
+    }
+  }
+
+  validateLength(event:any){
+    if (event.target.value.length > 50){
+      this.email = event.target.value.substring(0, 49);
+    }
+  }
+
+  onEmailChange() {
+    if (!this.emailPattern.test(this.email.trim())) {
+     // this.emailError = errorMessage.invalidEmail
+    } else {
+     // this.emailError = ''
     }
   }
   }
